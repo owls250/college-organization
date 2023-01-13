@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Schedule</title>
+</head>
+
+<body>
+    <p>Schedule</p>
+
+    <form action="/upload" enctype="multipart/form-data" method="post">
+        <!-- alt method: <input type="file" id="class_schedule_csvs" multiple /> -->
+
+        <label for="schedulecsv">Select csv with your first class schedule</label>
+        <input type="file" id="schedule1csv" accept=".csv" name="file1csv" >
+        <!--https://www.w3schools.cosm/html/html_form_input_types.asp-->
+        <br>
+        
+        <label for="schedulecsv">Select csv with your second class schedule</label>
+        <input type="file" id="schedule2csv" accept=".csv" name="file2csv">
+        
+        <input type="submit" value="Submit All Schedules" id="Submit">
+        <!--https://developer.mozilla.org/en-US/docs/Web/API/File_API/Using_files_from_web_applications-->
+    
+    </form>
+    <!--https://javascript.plainenglish.io/how-to-upload-file-from-a-webpage-e3e9fa727d73-->
+        
+    <table id="all-class-schedule">
+        <caption>Semester Schedule</caption>
+        <thead>
+            <tr>
+            <th>Date</th>
+            <th>Reading</th>
+            <th>Assignment</th>
+            </tr>
+        </thead>
+
+        <tbody id="assignments">
+                
+        </tbody>
+
+    </table>
+
+
+
+    
+
+    <!-- at the bottom to not slow loading of html -->
+    <script src="scheduleCollage.js"></script>
+    
+</body>
+
+</html>
