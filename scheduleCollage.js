@@ -2,42 +2,54 @@
 //const form  = document.querySelector('#scheduleInput');
 const form = document.getElementById('scheduleInput')
 form.addEventListener('submit', (event) => {
-    // validation
+  console.log( 'submit form listener');
+  // validation
 
-    // not valid: 
-    event.preventDefault();
+  // not valid: 
+  event.preventDefault();
 
-    form.submit();
-    handleFiles();
+  //form.submit();
+  handleFiles();
 
 }); // https://www.javascripttutorial.net/javascript-dom/javascript-form/
 //const inputElement = document.getElementById("schedule1csv");
 //inputElement.addEventListener("change", handleFiles, false);
 
 form.addEventListener('reset', (ev) => {
-  form.reset()
+  console.log( 'reset form listener');
+  form.reset();
 });
 
 function handleFiles() {
   console.log('start handle files');
   //const fileList = this.files; /* now you can work with the file list */
 
-  const allEvents = [];
-  console.log(form.elements);
-  for (el in form.elements.length) {
-    console.log("file ", el)
-    allEvents.push( csvtoarray( form.elements[el]));
+  const allAssign = [];
+  console.log('form elements' + form.elements);
+  console.log( 'form element 1: ' + form.elements[0]);
+  console.log('form length: ' + form.length);
+  
+  //for (let i = 0; i<form.length; i++) {
+  //  console.log( i + ": " + typeof(form[i]));
+  //  console.log( form[i]);
+
+  //}
+  for (let element = 0; element < form.elements.length; element++) {
+    console.log("file ", element);
+    allAssign.push( csvtoarray( form.elements[element]));
   
   }
+  // can't do for in with just a number, must be a list
+
   //for (file in fileList) {
   //  allEvents.push( csvtoarray( file));
   //}
   
   // sort
   //alert("Hi2")
-  if (allEvents == null) {
+  if (allAssign == null) {
     console.log( "null array");
-    } else { displayarray( allEvents); }
+    } else { displayarray( allAssign); }
 
   //alert('done');
   
@@ -45,7 +57,7 @@ function handleFiles() {
 
 function csvtoarray( csvfile) {
     console.log('csv reader');
-    alert('read');
+    //alert('read');
     let reader = new FileReader(); 
     console.log( "the type of the csv file: ", typeof(csvfile));
     console.log( "the file: ", csvfile);
@@ -66,6 +78,7 @@ function csvtoarray( csvfile) {
 
 function displayarray( data) {
     console.log("begin display array function");
+    console.log( "data:" + data)
 
     //let data = csvtoarray( document.getElementById(schedule1csv))
     let table = '';
@@ -95,7 +108,7 @@ function displayarray( data) {
         console.log( row);
     }
     console.log(row);
-    console.log("Did it");
+    console.log("Displayed array");
     //console.log(document.getElementByID("all-class-schedule").innerhtml)
     //document.getElementByID("all-class-schedule").innerhtml = table;
 

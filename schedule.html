@@ -28,7 +28,7 @@
 
     <!--Input the csv files-->
     <div class="container">
-    <form id="scheduleInput" action="/upload" enctype="multipart/form-data" method="post" class=""form>
+    <form id="scheduleInput" action="/upload" enctype="multipart/form-data" method="post" class="form">
         <!-- alt method: <input type="file" id="class_schedule_csvs" multiple /> -->
 
         <div class="field">
@@ -56,11 +56,11 @@
             <br>
         </div>
 
-        <input type="submit" value="Submit All Schedules" id="schedules">
+        <input type="submit" value="Submit All Schedules" id="schedules" onclick="form.submit()">
         <!--https://developer.mozilla.org/en-US/docs/Web/API/File_API/Using_files_from_web_applications-->
         <br>
 
-        <input type="button" value="Reset" id="resetscheduleinput">
+        <input type="button" value="Reset" id="resetscheduleinput" onclick="form.reset();">
         <!--https://javascript.plainenglish.io/how-to-upload-file-from-a-webpage-e3e9fa727d73-->
     
     </form>
