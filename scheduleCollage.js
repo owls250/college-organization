@@ -1,33 +1,71 @@
-const inputElement = document.getElementById("schedule1csv");
-inputElement.addEventListener("change", handleFiles, false);
+// when the first form is changed
+//const form  = document.querySelector('#scheduleInput');
+const form = document.getElementById('scheduleInput')
+form.addEventListener('submit', (event) => {
+    // validation
+
+    // not valid: 
+    event.preventDefault();
+
+    form.submit();
+    handleFiles();
+
+}); // https://www.javascripttutorial.net/javascript-dom/javascript-form/
+//const inputElement = document.getElementById("schedule1csv");
+//inputElement.addEventListener("change", handleFiles, false);
+
+form.addEventListener('reset', (ev) => {
+  form.reset()
+});
 
 function handleFiles() {
-  console.log("Hi!")
-  alert('start handle files');
-  const fileList = this.files; /* now you can work with the file list */
+  console.log('start handle files');
+  //const fileList = this.files; /* now you can work with the file list */
 
   const allEvents = [];
-  allEvents.push( csvtoarray( fileList));
+  console.log(form.elements);
+  for (el in form.elements.length) {
+    console.log("file ", el)
+    allEvents.push( csvtoarray( form.elements[el]));
+  
+  }
   //for (file in fileList) {
   //  allEvents.push( csvtoarray( file));
   //}
+  
+  // sort
+  //alert("Hi2")
+  if (allEvents == null) {
+    console.log( "null array");
+    } else { displayarray( allEvents); }
 
-  displayarray( allEvents);
-
-  alert('done');
+  //alert('done');
   
 }
 
 function csvtoarray( csvfile) {
-    alert('csv reader');
-    let reader = new FileReader();
-    reader.readAsText(csvfile);
-    let array = reader.result;
-    return array
+    console.log('csv reader');
+    alert('read');
+    let reader = new FileReader(); 
+    console.log( "the type of the csv file: ", typeof(csvfile));
+    console.log( "the file: ", csvfile);
+    //var array;
+    reader.onload = function( event) {
+        console.log('onload');
+        var array = reader.result;
+        console.log( "array: ", array); // https://stackoverflow.com/questions/13729301/html5-file-api-how-to-see-the-result-of-readastext
+        return array
+    };
+    form.onchange = function (event) {
+        console.log('onchange');
+        reader.readAsText(csvfile);
+    
+    };
+
 }
 
 function displayarray( data) {
-    alert("begin display array function");
+    console.log("begin display array function");
 
     //let data = csvtoarray( document.getElementById(schedule1csv))
     let table = '';
@@ -45,6 +83,7 @@ function displayarray( data) {
     let row = '';
 
     for (i=0; i<data.length; i++) {
+        console.log( "row: ", i);
         row = '<tr>';
 
         for (cell=0; cell<data[i].length; cell++) {
@@ -52,9 +91,13 @@ function displayarray( data) {
             row = row + cl;
         }
         row = row + '</tr>'
+        table = table + row;
+        console.log( row);
     }
-
-    document.getElementByID('all-class-schedule').innerHTML = table;
+    console.log(row);
+    console.log("Did it");
+    //console.log(document.getElementByID("all-class-schedule").innerhtml)
+    //document.getElementByID("all-class-schedule").innerhtml = table;
 
 }
 
