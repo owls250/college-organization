@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 
-<html lang="en">
-    <head>
-        <title>Organized</title> <!--tab label-->
-        <link rel="stylesheet" href="organization.css"> <!--links stylesheet-->
+<html lang="en/us">
+<head>
+    <title>Organized</title> <!--tab label-->
+    <link rel="stylesheet" href="organization.css"> <!--links stylesheet-->
         
-    </head>
+</head>
     
-    <body>
+<body>
 
-        <div class="grid-container">
-            <div id="readings" class="box" onmouseover="readingTextChange()" onmouseout="readingTextBack()">
-                <h2>Readings</h2>
-            </div>
-            <div id="assignments" class="box">
-                <h2>Assignments</h2>
-            </div>
-            <div id="tasks" class="box">
-                <h2>Tasks</h2>
-            </div>
-            <div id="future" class="box">
-                <h2>Future</h2>
-            </div>
+    <div class="grid-container">
+        <div id="readings" class="box" onmouseover="readingTextChange()" onmouseout="readingTextBack()">
+            <h2><a href="readings/readings.html">Readings</a></h2>
         </div>
-
-        <div id="selectors">
-            <h4><a href="schedule/schedule.html">Schedule</a></h4> <!--https://www.w3schools.com/js/js_date_methods.asp-->
-            <h4>Things</h4>
-            <h4>Classes</h4>
+        <div id="assignments" class="box">
+            <h2>Assignments</h2>
         </div>
+        <div id="tasks" class="box">
+            <h2>Tasks</h2>
+        </div>
+        <div id="future" class="box">
+            <h2>Future</h2>
+        </div>
+    </div>
+
+    <div id="selectors">
+        <h4><a href="schedule/schedule.html">Schedule</a></h4> <!--https://www.w3schools.com/js/js_date_methods.asp-->
+        <h4>Things</h4>
+        <h4>Classes</h4>
+    </div>
 
 
-        <script src="organization.js"></script>
+    <script src="organization.js"></script>
 
-    </body>
+</body>
 </html>
