@@ -34,6 +34,9 @@ async function handleFiles() {
   // display the array in a table
   displayArray( sortedAssignments);
 
+  // store array
+  localStorage.setItem( "schedule", sortedAssignments);
+
   // export
   arrayToCsv( allAssignments);
 
