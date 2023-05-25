@@ -1,6 +1,7 @@
 function showReadings() {
-    const file = document.getElementById("reading_table");
+    //const tab = document.getElementById("reading_table");
     const array = localStorage.getItem("schedule");
+    // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
     let contents = "";
 
@@ -13,5 +14,7 @@ function showReadings() {
     file_contents = "<table></tab<table id=reading_table><tr><th>Date</th><th>Class</th><th>Reading</th></tr>";
     file_contents += contents;
     file_contents += "</table>";
+
+    document.getElementById("reading_table").innerHTML = file_contents;
 
 }

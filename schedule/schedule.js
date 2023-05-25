@@ -34,8 +34,9 @@ async function handleFiles() {
   // display the array in a table
   displayArray( sortedAssignments);
 
-  // store array
+  // store array across sessions
   localStorage.setItem( "schedule", sortedAssignments);
+  // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
   // export
   arrayToCsv( allAssignments);
