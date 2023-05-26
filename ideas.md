@@ -20,7 +20,7 @@
 *in order from least to most difficult*
 - html table
     - week, date, readings, assignments, **big assignments**
-- stability
+- storage session to session
 - csv table/ website
 - this week/tomorrow
 
