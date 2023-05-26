@@ -8,6 +8,7 @@
 
 ## big questions
 - how much to use NLP or ML?
+- what did I mean by things?
 
 ## input
 *in order from least to most difficult*

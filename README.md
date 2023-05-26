@@ -6,3 +6,16 @@
 - support neurodiverse students and those w/ anxiety and depression
 
 ## Files
+although I might have to gather all scripts, CSS, etc
+
+### schedule
+upload class assignments
+
+### readings
+just see your readings
+
+### assignments
+things you have to do
+
+### future
+things like finding an internship
