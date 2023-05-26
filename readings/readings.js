@@ -59,10 +59,10 @@ function process( csvin, name) {
 
   
 
-async function showReadings() {
+function showReadings() {
     //const tab = document.getElementById("reading_table");
-    //const array = localStorage.getItem("schedule");
-    const array = await csvToArray( document.getElementById("reading_input").files[0]);
+    const array = localStorage.getItem("schedule");
+    //const array = await csvToArray( document.getElementById("reading_input").files[0]);
     let contents = "";
     // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
