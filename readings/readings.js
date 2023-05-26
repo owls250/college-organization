@@ -71,7 +71,7 @@ async function showReadings() {
 
     for (let row=0; row<array.length; row++) {
         if (array[row][2]!="N/A"&& array[row][2]!="") {// if not empty
-            contents += '<tr>'+ '<td>'+ array[row][0].toLocaleString() + '</td>' + '<td>'+ array[row][1] + '</td>' + '<td>' + array[row][2]+ '</td>' + '</tr>' // format and add to contents
+            contents += '<tr>'+ '<td>'+ new Date(array[row][0]).toLocaleString() + '</td>' + '<td>'+ array[row][2] + '</td>' + '<td>' + array[row][3]+ '</td>' + '</tr>' // format and add to contents
         }
     }
     
