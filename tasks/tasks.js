@@ -8,7 +8,7 @@ function addTask() {
     // get rid of table end to move it later
     table.replace("</table>", "");
     // blank table row
-    table += "<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td><input type='button' value='Edit' onclick='editRow("+ document.getElementById("task_table").rows.length +")'> <input type='button' value='Delete' onclick='deleteRow()'></td></tr>"; // add blank row
+    table += "<tr>" + "<td></td>".repeat(6) + "<td><input type='button' value='Edit' onclick='editRow("+ document.getElementById("task_table").rows.length +")'> <input type='button' value='Delete' onclick='deleteRow()'></td></tr>";
     table += "</table>"; // end table
 
     // change the table
@@ -21,5 +21,6 @@ function editRow( row) {
 
 // deletes the row at given index
 function deleteRow( row) {
-    deleteRow( row); // does this delete the right row?
+    // does this delete the right row?
+    document.getElementById("task_counter").innerHTML = '<p>Tasks: ' + document.getElementById("task_table").rows.length + '</p>';
 }
